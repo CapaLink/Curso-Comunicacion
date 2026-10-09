@@ -244,21 +244,6 @@ a{color:var(--slate);}
 .ps-row p{font-size:13.5px; color:var(--text-soft); margin:0;}
 .ps-arrow{color:var(--brass); font-size:20px;}
 
-/* ===== EVAL FINAL ===== */
-.eval-section{background:var(--ink); color:#EFEEE8; margin-top:0;}
-.eval-section .section{max-width:var(--maxw); padding-top:70px; padding-bottom:70px;}
-.eval-section h2{color:#fff;}
-.eval-section .eyebrow{color:var(--brass-soft);}
-.eval-section p.lead{color:#C9CFDC;}
-.eval-checklist{list-style:none; padding:0; margin:20px 0; display:grid; gap:8px;}
-.eval-checklist li{
-  display:flex; gap:10px; align-items:flex-start; font-size:14.5px; color:#DCE1EA;
-}
-.eval-checklist li::before{content:"✓"; color:var(--brass-soft); font-weight:700; flex-shrink:0;}
-.form-frame{margin-top:26px; background:#fff; border-radius:var(--radius); overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,.35);}
-.form-frame iframe{width:100%; min-height:900px; border:none; display:block;}
-
-footer{text-align:center; padding:30px 20px; color:var(--text-soft); font-size:13.5px; font-family:'IBM Plex Mono', monospace;}
 
 @media (max-width:900px){
   .hero-inner{grid-template-columns:1fr; text-align:center;}
@@ -290,12 +275,11 @@ footer{text-align:center; padding:30px 20px; color:var(--text-soft); font-size:1
     <svg class="compass" viewBox="0 0 170 170" aria-hidden="true">
       <circle class="dial" cx="85" cy="85" r="70"/>
       <circle class="dial" cx="85" cy="85" r="55"/>
-      <text class="label" id="lbl-mod1" x="85" y="18" text-anchor="middle">CANALES</text>
-      <text class="label" id="lbl-mod2" x="146" y="50" text-anchor="start">BARRERAS</text>
-      <text class="label" id="lbl-mod3" x="146" y="122" text-anchor="start">ESTILOS</text>
-      <text class="label" id="lbl-mod4" x="85" y="155" text-anchor="middle">ESCUCHA</text>
-      <text class="label" id="lbl-mod5" x="24" y="122" text-anchor="end">ÁGIL</text>
-      <text class="label" id="lbl-eval" x="24" y="50" text-anchor="end">EVAL.</text>
+      <text class="label" id="lbl-mod1" x="85"  y="18"  text-anchor="middle">CANALES</text>
+      <text class="label" id="lbl-mod2" x="146" y="64"  text-anchor="start">BARRERAS</text>
+      <text class="label" id="lbl-mod3" x="122" y="152" text-anchor="middle">ESTILOS</text>
+      <text class="label" id="lbl-mod4" x="48"  y="152" text-anchor="middle">ESCUCHA</text>
+      <text class="label" id="lbl-mod5" x="24"  y="64"  text-anchor="end">ÁGIL</text>
       <g class="needle" id="needle">
         <polygon class="needle-fill" points="85,25 91,85 85,80 79,85"/>
         <polygon points="85,145 91,85 85,90 79,85" fill="#5B6579"/>
@@ -309,7 +293,6 @@ footer{text-align:center; padding:30px 20px; color:var(--text-soft); font-size:1
       <div class="hero-meta">
         <span class="chip">5 bloques temáticos</span>
         <span class="chip">Autoevaluaciones interactivas</span>
-        <span class="chip">Evaluación final</span>
       </div>
     </div>
   </div>
@@ -332,7 +315,7 @@ footer{text-align:center; padding:30px 20px; color:var(--text-soft); font-size:1
       <a href="#mod3" data-nav="mod3">3. Estilos</a>
       <a href="#mod4" data-nav="mod4">4. Escucha activa</a>
       <a href="#mod5" data-nav="mod5">5. Comunicación ágil</a>
-      <a href="#evalfinal" data-nav="eval">6. Evaluación final</a>
+     
     </nav>
   </div>
 
@@ -348,7 +331,6 @@ footer{text-align:center; padding:30px 20px; color:var(--text-soft); font-size:1
         <li>Estilos de comunicación</li>
         <li>Escucha activa</li>
         <li>Prácticas de comunicación en desarrollo ágil</li>
-        <li>Evaluación final</li>
       </ol>
     </section>
 
@@ -589,24 +571,7 @@ footer{text-align:center; padding:30px 20px; color:var(--text-soft); font-size:1
   </div>
 </div>
 
-<!-- EVALUACION FINAL -->
-<section class="eval-section" id="evalfinal" data-compass="eval">
-  <div class="section">
-    <span class="eyebrow">6 · Para cerrar el curso</span>
-    <h2>Evaluación final</h2>
-    <p class="lead">Ya recorriste los cinco bloques del curso y completaste las autoevaluaciones de canales de comunicación y comunicación efectiva. Para finalizar, completá el siguiente formulario:</p>
-    <ul class="eval-checklist">
-      <li>¿Cómo nos comunicamos? — canales y proceso de comunicación</li>
-      <li>Elementos que interfieren en la comunicación efectiva</li>
-      <li>Estilos de comunicación y comunicación asertiva</li>
-      <li>Escucha activa</li>
-      <li>Prácticas de comunicación en desarrollo ágil</li>
-    </ul>
-    <div class="form-frame">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSepTMx-7CIfxTLzxJobWDwNL8yk3HJaiEzVMvz9xz5Zmqt4yg/viewform?embedded=true" title="Comunicación - Evaluación Final">Cargando…</iframe>
-    </div>
-  </div>
-</section>
+
 
 <footer>CAMPUS DE CAPACITACIÓN INTERNA — COMUNICACIÓN</footer>
 
@@ -661,10 +626,10 @@ document.querySelector('.btn-check-fill').addEventListener('click', ()=>{
 });
 
 // ---- Compass + active nav ----
-const angles = {mod1:0, mod2:60, mod3:120, mod4:180, mod5:240, eval:300};
+const angles = {mod1:0, mod2:72, mod3:144, mod4:216, mod5:288};
 const needle = document.getElementById('needle');
 const needleMini = document.getElementById('needle-mini');
-const labelIds = {mod1:'lbl-mod1', mod2:'lbl-mod2', mod3:'lbl-mod3', mod4:'lbl-mod4', mod5:'lbl-mod5', eval:'lbl-eval'};
+const labelIds = {mod1:'lbl-mod1', mod2:'lbl-mod2', mod3:'lbl-mod3', mod4:'lbl-mod4', mod5:'lbl-mod5'};
 const navLinks = document.querySelectorAll('.rail a[data-nav]');
 
 function setActive(key){
