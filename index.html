@@ -80,8 +80,6 @@ a{color:var(--slate);}
 .section + .section{border-top:1px solid var(--line);}
 .section[data-compass]{padding-top:96px;}
 
-
-
 /* ===== HERO ===== */
 .hero{
   background:radial-gradient(120% 140% at 15% -10%, #24365A 0%, var(--ink) 55%, #0F1728 100%);
@@ -111,7 +109,7 @@ a{color:var(--slate);}
   border-radius:100px;
 }
 
-/* compass (6 puntos) */
+/* compass (5 puntos) */
 .compass{width:170px; height:170px; margin:0 auto;}
 .compass .dial{fill:none; stroke:rgba(255,255,255,.35); stroke-width:1;}
 .compass .label{
@@ -244,6 +242,31 @@ a{color:var(--slate);}
 .ps-row p{font-size:13.5px; color:var(--text-soft); margin:0;}
 .ps-arrow{color:var(--brass); font-size:20px;}
 
+/* ===== CIERRE ===== */
+.closing{background:var(--ink); color:#EFEEE8;}
+.closing .section{padding-top:70px; padding-bottom:70px;}
+.closing h2{color:#fff;}
+.closing .eyebrow{color:var(--brass-soft);}
+.closing p.lead{color:#C9CFDC;}
+.closing-steps{list-style:none; padding:0; margin:28px 0; display:grid; gap:12px;}
+.closing-steps li{
+  display:flex; gap:16px; align-items:flex-start;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:var(--radius);
+  padding:16px 20px;
+}
+.closing-steps .n{
+  font-family:'IBM Plex Mono', monospace; font-size:13px; font-weight:500;
+  width:30px; height:30px; border-radius:50%;
+  background:var(--brass); color:var(--ink);
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.closing-steps h4{color:#fff; font-size:17px; margin:0 0 .2em;}
+.closing-steps p{color:#C9CFDC; font-size:14.5px; margin:0;}
+.closing-note{color:var(--brass-soft); font-family:'IBM Plex Mono', monospace; font-size:13px; letter-spacing:.04em; margin:0;}
+
+footer{text-align:center; padding:30px 20px; color:var(--text-soft); font-size:13.5px; font-family:'IBM Plex Mono', monospace;}
 
 @media (max-width:900px){
   .hero-inner{grid-template-columns:1fr; text-align:center;}
@@ -266,8 +289,6 @@ a{color:var(--slate);}
 </head>
 <body>
 
-
-
 <!-- HERO -->
 <header class="hero">
   <div class="hero-inner">
@@ -275,11 +296,11 @@ a{color:var(--slate);}
     <svg class="compass" viewBox="0 0 170 170" aria-hidden="true">
       <circle class="dial" cx="85" cy="85" r="70"/>
       <circle class="dial" cx="85" cy="85" r="55"/>
-      <text class="label" id="lbl-mod1" x="85"  y="18"  text-anchor="middle">CANALES</text>
-      <text class="label" id="lbl-mod2" x="146" y="64"  text-anchor="start">BARRERAS</text>
+      <text class="label" id="lbl-mod1" x="85" y="18" text-anchor="middle">CANALES</text>
+      <text class="label" id="lbl-mod2" x="146" y="64" text-anchor="start">BARRERAS</text>
       <text class="label" id="lbl-mod3" x="122" y="152" text-anchor="middle">ESTILOS</text>
-      <text class="label" id="lbl-mod4" x="48"  y="152" text-anchor="middle">ESCUCHA</text>
-      <text class="label" id="lbl-mod5" x="24"  y="64"  text-anchor="end">ÁGIL</text>
+      <text class="label" id="lbl-mod4" x="48" y="152" text-anchor="middle">ESCUCHA</text>
+      <text class="label" id="lbl-mod5" x="24" y="64" text-anchor="end">ÁGIL</text>
       <g class="needle" id="needle">
         <polygon class="needle-fill" points="85,25 91,85 85,80 79,85"/>
         <polygon points="85,145 91,85 85,90 79,85" fill="#5B6579"/>
@@ -293,6 +314,7 @@ a{color:var(--slate);}
       <div class="hero-meta">
         <span class="chip">5 bloques temáticos</span>
         <span class="chip">Autoevaluaciones interactivas</span>
+        <span class="chip">Evaluación en Humand</span>
       </div>
     </div>
   </div>
@@ -315,7 +337,7 @@ a{color:var(--slate);}
       <a href="#mod3" data-nav="mod3">3. Estilos</a>
       <a href="#mod4" data-nav="mod4">4. Escucha activa</a>
       <a href="#mod5" data-nav="mod5">5. Comunicación ágil</a>
-     
+      <a href="#cierre">Cierre</a>
     </nav>
   </div>
 
@@ -571,7 +593,35 @@ a{color:var(--slate);}
   </div>
 </div>
 
+<!-- CIERRE -->
+<section class="closing" id="cierre">
+  <div class="section">
+    <span class="eyebrow">Para cerrar el curso</span>
+    <h2>¡Terminaste los contenidos!</h2>
+    <p class="lead">Ya recorriste los cinco bloques del curso. Para completarlo, falta un último paso en Humand:</p>
 
+    <ol class="closing-steps">
+      <li>
+        <span class="n">1</span>
+        <div><h4>Cerrá este curso</h4><p>Cerrá esta ventana para volver a Humand.</p></div>
+      </li>
+      <li>
+        <span class="n">2</span>
+        <div><h4>Realizá la evaluación final</h4><p>Ingresá nuevamente al curso en Humand y completá la evaluación final.</p></div>
+      </li>
+      <li>
+        <span class="n">3</span>
+        <div><h4>Firmá el curso</h4><p>El curso queda completo una vez que realices la evaluación y lo firmes.</p></div>
+      </li>
+      <li>
+        <span class="n">4</span>
+        <div><h4>Descargá tu certificado</h4><p>Cuando lo completes, vas a poder descargar el certificado correspondiente.</p></div>
+      </li>
+    </ol>
+
+    <p class="closing-note">¡Gracias por tu tiempo y tu compromiso con la capacitación!</p>
+  </div>
+</section>
 
 <footer>CAMPUS DE CAPACITACIÓN INTERNA — COMUNICACIÓN</footer>
 
